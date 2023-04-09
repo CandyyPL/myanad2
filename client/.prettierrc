@@ -1,0 +1,12 @@
+{
+  "endOfLine": "crlf",
+  "tabWidth": 2,
+  "bracketSameLine": true,
+  "bracketSpacing": true,
+  "arrowParens": "always",
+  "jsxSingleQuote": false,
+  "singleQuote": true,
+  "printWidth": 200,
+  "semi": false,
+  "trailingComma": "es5"
+}
