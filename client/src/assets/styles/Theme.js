@@ -1,6 +1,8 @@
 const Theme = {
   fonts: {
-    nunito: '"Nunito", sans-serif',
+    josefin: '"Josefin Sans", sans-serif',
+    noto: '"Noto Sans", sans-serif',
+    quicksand: '"Quicksand", sans-serif',
   },
   colors: {
     light: '#eee',

@@ -8,7 +8,7 @@ import WebFont from 'webfontloader'
 
 WebFont.load({
   google: {
-    families: ['Nunito'],
+    families: ['Josefin Sans', 'Noto Sans', 'Quicksand'],
   },
 })
 
