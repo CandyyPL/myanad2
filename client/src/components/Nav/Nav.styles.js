@@ -13,11 +13,11 @@ export const NavMenu = styled.div`
   margin: 0;
   padding: 0;
 
-  transform: translateX(320px);
+  transform: translateX(100%);
   transition: all 0.2s;
 
   &.active {
-    transform: translateX(0px);
+    transform: translateX(0);
   }
 
   background-color: #eee;
