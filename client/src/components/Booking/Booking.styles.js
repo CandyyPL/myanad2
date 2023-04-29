@@ -13,6 +13,11 @@ export const BookingWrapper = styled.section`
     width: 80%;
     height: 90px;
 
+    @media screen and (min-width: ${({ theme }) => theme.sizes.small}) {
+      width: 300px;
+      height: 140px;
+    }
+
     background-color: #2dc87a;
     border: none;
     border-radius: 15px;

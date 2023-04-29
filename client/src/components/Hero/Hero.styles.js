@@ -24,10 +24,11 @@ export const HeroWrapper = styled.section`
 
   .desktop-left {
     width: 100%;
-    height: 100%;
+    height: 50%;
 
     @media screen and (min-width: ${({ theme }) => theme.sizes.small}) {
       width: 60%;
+      height: 100%;
     }
 
     display: flex;
@@ -45,9 +46,13 @@ export const HeroWrapper = styled.section`
     width: 40%;
     height: 100%;
 
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
+
+    @media screen and (min-width: ${({ theme }) => theme.sizes.small}) {
+      display: flex;
+    }
   }
 
   .motto {
@@ -66,12 +71,16 @@ export const HeroWrapper = styled.section`
     }
 
     .desktop-under-motto {
-      display: flex;
+      display: none;
 
       font-size: 18px;
       font-family: ${({ theme }) => theme.fonts.josefin};
       text-align: left;
       color: #ddd;
+
+      @media screen and (min-width: ${({ theme }) => theme.sizes.small}) {
+        display: flex;
+      }
     }
 
     @media screen and (max-width: ${({ theme }) => theme.sizes.minimal}) {
@@ -92,11 +101,21 @@ export const HeroWrapper = styled.section`
     }
   }
 
+  .desktop-survey-button {
+    display: none;
+
+    @media screen and (min-width: ${({ theme }) => theme.sizes.small}) {
+      display: block;
+    }
+  }
+
   .survey-button {
     width: 100%;
     height: 20%;
 
-    justify-content: flex-start;
+    @media screen and (min-width: ${({ theme }) => theme.sizes.small}) {
+      justify-content: flex-start;
+    }
 
     button {
       width: 75%;

@@ -12,21 +12,19 @@ const Hero = () => {
       <div className="desktop-left">
         <div className="motto">
           <span className="main-motto">For business owners who want to drastically increase their income!</span>
-          {vwidth[0] >= 768 ? <span className="desktop-under-motto">Take a free survey to check if your business may be lacking in leads, funnel or marketing.</span> : null}
+          <span className="desktop-under-motto">Take a free survey to check if your business may be lacking in leads, funnel or marketing.</span>
         </div>
-        <div className="survey-button">
+        <div className="desktop-survey-button survey-button">
           <button>
             <span>FREE SURVEY</span>
           </button>
         </div>
       </div>
-      {vwidth[0] >= 768 ? (
-        <div className="desktop-right">
-          <div className="image">
-            <img src={stonksImg} alt="stonks" />
-          </div>
+      <div className="desktop-right">
+        <div className="image">
+          <img src={stonksImg} alt="stonks" />
         </div>
-      ) : null}
+      </div>
       {vwidth[0] < 768 ? (
         <>
           <div className="image">

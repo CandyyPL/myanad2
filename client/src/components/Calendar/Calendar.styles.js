@@ -4,6 +4,16 @@ export const CalendarWrapper = styled.div`
   width: 100%;
   height: 400px;
 
+  @media screen and (min-width: ${({ theme }) => theme.sizes.small}) {
+    width: 80%;
+    height: 500px;
+  }
+
+  @media screen and (min-width: ${({ theme }) => theme.sizes.smallMedium}) {
+    width: 60%;
+    height: 600px;
+  }
+
   background-color: #222;
   border-radius: 10px;
   padding: 5px;
@@ -85,13 +95,21 @@ export const CalendarElement = styled.div`
   justify-content: center;
   align-items: center;
 
-  font-size: 16px;
+  font-size: 14px;
   font-family: ${({ theme }) => theme.fonts.quicksand};
   font-weight: bold;
   color: #eee;
 
   @media screen and (max-width: ${({ theme }) => theme.sizes.minimal}) {
     font-size: 12px;
+  }
+
+  @media screen and (min-width: ${({ theme }) => theme.sizes.small}) {
+    font-size: 16px;
+  }
+
+  @media screen and (min-width: ${({ theme }) => theme.sizes.smallMedium}) {
+    font-size: 20px;
   }
 
   &.prior,
