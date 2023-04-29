@@ -44,8 +44,10 @@ export const AboutWrapper = styled.section`
       text-align: center;
       color: #eee;
 
-      @media screen and (max-width: 300px) {
+      @media screen and (max-width: ${({ theme }) => theme.sizes.minimal}) {
         font-size: 20px;
+
+        margin-bottom: 10px;
       }
     }
 
@@ -67,7 +69,7 @@ export const AboutWrapper = styled.section`
           width: 100px;
           height: 100px;
 
-          @media screen and (max-width: 300px) {
+          @media screen and (max-width: ${({ theme }) => theme.sizes.minimal}) {
             width: 70px;
             height: 70px;
           }
@@ -77,7 +79,7 @@ export const AboutWrapper = styled.section`
           width: 85px;
           height: 85px;
 
-          @media screen and (max-width: 300px) {
+          @media screen and (max-width: ${({ theme }) => theme.sizes.minimal}) {
             width: 55px;
             height: 55px;
           }
@@ -114,7 +116,7 @@ export const AboutWrapper = styled.section`
       text-align: center;
       color: #eee;
 
-      @media screen and (max-width: 300px) {
+      @media screen and (max-width: ${({ theme }) => theme.sizes.minimal}) {
         font-size: 32px;
       }
     }

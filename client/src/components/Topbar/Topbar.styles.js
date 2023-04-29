@@ -4,9 +4,21 @@ export const TopbarWrapper = styled.div`
   width: 100%;
   height: 80px;
 
-  display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
-  grid-template-rows: 1fr;
+  @media screen and (max-width: ${({ theme }) => theme.sizes.small}) {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  @media screen and (min-width: ${({ theme }) => theme.sizes.small}) {
+    width: 95%;
+
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+  }
 
   .logo {
     grid-column: 2 / 3;
@@ -15,6 +27,12 @@ export const TopbarWrapper = styled.div`
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+
+    @media screen and (min-width: ${({ theme }) => theme.sizes.small}) {
+      grid-column: 1 / 2;
+
+      flex-direction: row;
+    }
 
     img {
       height: 50%;
@@ -31,6 +49,29 @@ export const TopbarWrapper = styled.div`
 
   .menu {
     grid-column: 3 / 4;
+
+    .desktop-menu {
+      width: 100%;
+      height: 100%;
+
+      list-style: none;
+
+      display: none;
+      justify-content: space-evenly;
+      align-items: center;
+
+      font-size: 20px;
+      font-family: ${({ theme }) => theme.fonts.josefin};
+      color: #eee;
+    }
+
+    @media screen and (min-width: ${({ theme }) => theme.sizes.small}) {
+      grid-column: 2 / 3;
+
+      .desktop-menu {
+        display: flex;
+      }
+    }
 
     display: flex;
     justify-content: center;

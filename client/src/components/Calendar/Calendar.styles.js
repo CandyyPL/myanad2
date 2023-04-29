@@ -52,7 +52,7 @@ export const CalendarWrapper = styled.div`
       font-family: ${({ theme }) => theme.fonts.quicksand};
       font-weight: bold;
 
-      @media screen and (max-width: 300px) {
+      @media screen and (max-width: ${({ theme }) => theme.sizes.minimal}) {
         font-size: 16px;
       }
     }
@@ -71,7 +71,7 @@ export const CalendarElement = styled.div`
   width: 40px;
   height: 40px;
 
-  @media screen and (max-width: 300px) {
+  @media screen and (max-width: ${({ theme }) => theme.sizes.minimal}) {
     width: 25px;
     height: 25px;
   }
@@ -90,7 +90,7 @@ export const CalendarElement = styled.div`
   font-weight: bold;
   color: #eee;
 
-  @media screen and (max-width: 300px) {
+  @media screen and (max-width: ${({ theme }) => theme.sizes.minimal}) {
     font-size: 12px;
   }
 

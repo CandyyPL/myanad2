@@ -17,12 +17,17 @@ const Topbar = () => {
         <img src={logoImg} alt="logo" />
         <span>MYANAD</span>
       </div>
-      {/*<div className="menu">
-        <Hamburger onClick={(e) => activateMenu(e)}>
+      <div className="menu">
+        {/*<Hamburger onClick={(e) => activateMenu(e)}>
           <span className="hamburger-line"></span>
         </Hamburger>
-        <Nav ref={navMenuRef} />
-      </div>*/}
+        <Nav ref={navMenuRef} />*/}
+        <ul className="desktop-menu">
+          <li>Gain Advantage</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+      </div>
     </TopbarWrapper>
   )
 }
