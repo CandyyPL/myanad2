@@ -20,6 +20,12 @@ export const TopbarWrapper = styled.div`
     grid-template-rows: 1fr;
   }
 
+  @media screen and (min-width: ${({ theme }) => theme.sizes.medium}) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 3fr;
+    grid-template-rows: 1fr;
+  }
+
   .logo {
     grid-column: 2 / 3;
 
@@ -48,8 +54,6 @@ export const TopbarWrapper = styled.div`
   }
 
   .menu {
-    grid-column: 3 / 4;
-
     .desktop-menu {
       width: 100%;
       height: 100%;
@@ -63,6 +67,24 @@ export const TopbarWrapper = styled.div`
       font-size: 20px;
       font-family: ${({ theme }) => theme.fonts.josefin};
       color: #eee;
+
+      @media screen and (min-width: ${({ theme }) => theme.sizes.smallMedium}) {
+        font-size: 24px;
+      }
+
+      @media screen and (min-width: ${({ theme }) => theme.sizes.medium}) {
+        font-size: 26px;
+      }
+
+      li {
+        cursor: pointer;
+
+        transition: text-shadow 0.2s;
+
+        &:hover {
+          text-shadow: 0 0 10px rgba(255, 255, 255, 1);
+        }
+      }
     }
 
     @media screen and (min-width: ${({ theme }) => theme.sizes.small}) {
@@ -71,6 +93,10 @@ export const TopbarWrapper = styled.div`
       .desktop-menu {
         display: flex;
       }
+    }
+
+    @media screen and (min-width: ${({ theme }) => theme.sizes.medium}) {
+      grid-column: 3 / 4;
     }
 
     display: flex;

@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { HeroWrapper } from '@/components/Hero/Hero.styles.js'
 import stonksImg from '@/assets/stonks.png'
 
 const Hero = () => {
   const vwidth = useState(innerWidth)
-
-  console.log(vwidth)
 
   return (
     <HeroWrapper>

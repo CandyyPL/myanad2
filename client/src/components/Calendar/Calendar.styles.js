@@ -14,6 +14,11 @@ export const CalendarWrapper = styled.div`
     height: 600px;
   }
 
+  @media screen and (min-width: ${({ theme }) => theme.sizes.medium}) {
+    width: 40%;
+    height: 600px;
+  }
+
   background-color: #222;
   border-radius: 10px;
   padding: 5px;
@@ -53,6 +58,12 @@ export const CalendarWrapper = styled.div`
         &:active {
           background-color: #666;
         }
+
+        @media screen and (min-width: ${({ theme }) => theme.sizes.medium}) {
+          &:hover {
+            background-color: #666;
+          }
+        }
       }
     }
 
@@ -84,6 +95,11 @@ export const CalendarElement = styled.div`
   @media screen and (max-width: ${({ theme }) => theme.sizes.minimal}) {
     width: 25px;
     height: 25px;
+  }
+
+  @media screen and (min-width: ${({ theme }) => theme.sizes.medium}) {
+    width: 50px;
+    height: 50px;
   }
 
   border-radius: 5px;

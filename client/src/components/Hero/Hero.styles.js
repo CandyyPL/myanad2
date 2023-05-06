@@ -16,6 +16,14 @@ export const HeroWrapper = styled.section`
     justify-content: space-evenly;
   }
 
+  @media screen and (min-width: ${({ theme }) => theme.sizes.medium}) {
+    height: 600px;
+  }
+
+  @media screen and (min-width: ${({ theme }) => theme.sizes.large}) {
+    height: 800px;
+  }
+
   div {
     display: flex;
     justify-content: center;
@@ -53,6 +61,10 @@ export const HeroWrapper = styled.section`
     @media screen and (min-width: ${({ theme }) => theme.sizes.small}) {
       display: flex;
     }
+
+    @media screen and (min-width: ${({ theme }) => theme.sizes.medium}) {
+      justify-content: space-evenly;
+    }
   }
 
   .motto {
@@ -68,6 +80,18 @@ export const HeroWrapper = styled.section`
       @media screen and (min-width: ${({ theme }) => theme.sizes.small}) {
         text-align: left;
       }
+
+      @media screen and (min-width: ${({ theme }) => theme.sizes.medium}) {
+        margin-bottom: 20px;
+
+        font-size: 50px;
+      }
+
+      @media screen and (min-width: ${({ theme }) => theme.sizes.large}) {
+        margin-bottom: 20px;
+
+        font-size: 75px;
+      }
     }
 
     .desktop-under-motto {
@@ -80,6 +104,14 @@ export const HeroWrapper = styled.section`
 
       @media screen and (min-width: ${({ theme }) => theme.sizes.small}) {
         display: flex;
+      }
+
+      @media screen and (min-width: ${({ theme }) => theme.sizes.medium}) {
+        width: 80%;
+
+        margin-bottom: 20px;
+
+        font-size: 28px;
       }
     }
 
@@ -94,6 +126,10 @@ export const HeroWrapper = styled.section`
 
     @media screen and (min-width: ${({ theme }) => theme.sizes.small}) {
       height: 60%;
+    }
+
+    @media screen and (min-width: ${({ theme }) => theme.sizes.medium}) {
+      height: 75%;
     }
 
     img {
@@ -111,7 +147,7 @@ export const HeroWrapper = styled.section`
 
   .survey-button {
     width: 100%;
-    height: 20%;
+    height: 10%;
 
     @media screen and (min-width: ${({ theme }) => theme.sizes.small}) {
       justify-content: flex-start;
@@ -178,6 +214,13 @@ export const HeroWrapper = styled.section`
         }
 
         transition: color 0.1s;
+      }
+
+      @media screen and (min-width: ${({ theme }) => theme.sizes.medium}) {
+        width: 30%;
+        height: 75px;
+
+        font-size: 24px;
       }
     }
   }

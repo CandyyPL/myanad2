@@ -15,9 +15,17 @@ export const AboutWrapper = styled.section`
     flex-direction: row;
   }
 
+  @media screen and (min-width: ${({ theme }) => theme.sizes.medium}) {
+    height: 800px;
+  }
+
   .vert-gallery {
     width: 40%;
-    height: 75%;
+    height: 70%;
+
+    @media screen and (min-width: ${({ theme }) => theme.sizes.medium}) {
+      width: 30%;
+    }
 
     list-style: none;
 
@@ -33,6 +41,10 @@ export const AboutWrapper = styled.section`
       width: 100%;
       height: 28%;
 
+      @media screen and (min-width: ${({ theme }) => theme.sizes.medium}) {
+        height: 25%;
+      }
+
       background-color: #0c322c;
       border-radius: 100px 40px 40px 100px;
 
@@ -43,6 +55,11 @@ export const AboutWrapper = styled.section`
       .photo {
         width: 120px;
         height: 120px;
+
+        @media screen and (min-width: ${({ theme }) => theme.sizes.medium}) {
+          width: 150px;
+          height: 150px;
+        }
 
         border: 2px solid #2dc87a;
         border-radius: 50%;
@@ -75,6 +92,10 @@ export const AboutWrapper = styled.section`
           @media screen and (min-width: ${({ theme }) => theme.sizes.smallMedium}) {
             font-size: 26px;
           }
+
+          @media screen and (min-width: ${({ theme }) => theme.sizes.medium}) {
+            font-size: 32px;
+          }
         }
 
         .role {
@@ -84,6 +105,10 @@ export const AboutWrapper = styled.section`
 
           @media screen and (min-width: ${({ theme }) => theme.sizes.smallMedium}) {
             font-size: 18px;
+          }
+
+          @media screen and (min-width: ${({ theme }) => theme.sizes.medium}) {
+            font-size: 20px;
           }
         }
       }
@@ -113,6 +138,10 @@ export const AboutWrapper = styled.section`
     font-weight: bold;
     color: #eee;
     text-align: center;
+
+    @media screen and (min-width: ${({ theme }) => theme.sizes.medium}) {
+      font-size: 50px;
+    }
   }
 
   .info {
@@ -141,6 +170,10 @@ export const AboutWrapper = styled.section`
         display: flex;
         justify-content: center;
         align-items: center;
+      }
+
+      @media screen and (min-width: ${({ theme }) => theme.sizes.medium}) {
+        font-size: 32px;
       }
     }
 

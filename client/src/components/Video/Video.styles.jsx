@@ -12,6 +12,10 @@ export const VideoWrapper = styled.section`
     background-color: transparent;
   }
 
+  @media screen and (min-width: ${({ theme }) => theme.sizes.medium}) {
+    max-height: 800px;
+  }
+
   border: none;
   border-radius: 10px;
   padding: 10px;
@@ -33,6 +37,10 @@ export const VideoWrapper = styled.section`
 
     @media screen and (max-width: ${({ theme }) => theme.sizes.minimal}) {
       font-size: 22px;
+    }
+
+    @media screen and (min-width: ${({ theme }) => theme.sizes.medium}) {
+      font-size: 40px;
     }
   }
 
@@ -62,6 +70,9 @@ export const VideoWrapper = styled.section`
   .media-wrapper {
     width: fit-content;
     height: fit-content;
+
+    max-width: 1600px;
+    max-height: 900px;
 
     display: flex;
     justify-content: center;
