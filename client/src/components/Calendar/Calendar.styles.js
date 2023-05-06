@@ -135,8 +135,26 @@ export const CalendarElement = styled.div`
     color: #666;
   }
 
-  .current {
-    color: green;
+  &.today {
+    border: 2px solid coral;
+  }
+
+  &.selected {
+    background-color: #2dca7a;
+
+    &:hover {
+      background-color: #1baa5a;
+    }
+  }
+
+  &.unav {
+    background-color: #e0515d;
+
+    color: #eee !important;
+
+    &:hover {
+      background-color: #8e151d !important;
+    }
   }
 
   &:not(.wd, .prior, .next) {
@@ -147,8 +165,16 @@ export const CalendarElement = styled.div`
       color: #e0515d;
     }
 
-    &:hover {
-      background-color: #666;
+    @media screen and (min-width: ${({ theme }) => theme.sizes.small}) {
+      &:active {
+        background-color: #666;
+      }
+    }
+
+    @media screen and (min-width: ${({ theme }) => theme.sizes.medium}) {
+      &:hover {
+        background-color: #666;
+      }
     }
   }
 `

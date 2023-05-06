@@ -6,6 +6,7 @@ import Video from '@/components/Video/Video.jsx'
 import About from '@/components/About/About.jsx'
 import Booking from '@/components/Booking/Booking.jsx'
 import Footer from '@/components/Footer/Footer.jsx'
+import BookingProvider from '@/providers/BookingProvider.jsx'
 
 const Home = () => {
   return (
@@ -15,7 +16,9 @@ const Home = () => {
         <Hero />
         <Video />
         <About />
-        <Booking />
+        <BookingProvider>
+          <Booking />
+        </BookingProvider>
       </ContentWrapper>
       <Footer />
     </HomeWrapper>

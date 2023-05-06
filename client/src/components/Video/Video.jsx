@@ -12,6 +12,7 @@ const Video = () => {
   const videoControl = useRef(null)
 
   const [currentButtonImg, setCurrentButtonImg] = useState(playImg)
+  const [videoVisible, setVideoVisible] = useState(false)
 
   const changeVideoState = () => {
     if (video.current.paused) {
@@ -48,9 +49,22 @@ const Video = () => {
         <span>How to gain positively unfair advantage over your competition?</span>
       </div>
       {vwidth[0] < 768 ? (
-        <div className="video-button">
-          <button>TAP TO WATCH</button>
-        </div>
+        <>
+          {videoVisible ? (
+            <div className="media-wrapper dark" ref={videoOverlay}>
+              <video ref={video}>
+                <source src={sampleVideo} />
+              </video>
+              <div className="control active" onClick={changeVideoState} ref={videoControl}>
+                <img src={currentButtonImg} alt="playpause" />
+              </div>
+            </div>
+          ) : (
+            <div className="video-button">
+              <button onClick={() => setVideoVisible(true)}>TAP TO WATCH</button>
+            </div>
+          )}
+        </>
       ) : (
         <div className="media-wrapper dark" ref={videoOverlay}>
           <video ref={video}>

@@ -71,8 +71,8 @@ export const VideoWrapper = styled.section`
     width: fit-content;
     height: fit-content;
 
-    max-width: 1600px;
-    max-height: 900px;
+    max-width: 1440px;
+    max-height: 810px;
 
     display: flex;
     justify-content: center;

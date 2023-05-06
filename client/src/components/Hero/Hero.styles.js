@@ -124,6 +124,8 @@ export const HeroWrapper = styled.section`
     width: 100%;
     height: 30%;
 
+    margin-bottom: 10px;
+
     @media screen and (min-width: ${({ theme }) => theme.sizes.small}) {
       height: 60%;
     }
@@ -160,8 +162,9 @@ export const HeroWrapper = styled.section`
       background-color: #2dc87a;
       border: none;
       border-radius: 25px;
+      margin-top: 20px;
 
-      font-size: 20px;
+      font-size: 18px;
       font-family: ${({ theme }) => theme.fonts.josefin};
       color: #fff;
 

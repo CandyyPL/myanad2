@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { CalendarElement, CalendarWrapper } from '@/components/Calendar/Calendar.styles.js'
+import { BookingContext } from '@/providers/BookingProvider.jsx'
 
 const actions = {
   PREV: 0,
@@ -19,11 +20,31 @@ const Calendar = () => {
     priorDays: 0,
     priorLastDayNumber: 0,
     currentDays: 0,
+    currentDayNumber: 0,
     currentMonthNumber: 0,
+    currentYear: 2022,
   })
 
   const [selectedMonth, setSelectedMonth] = useState(new Date().getMonth())
   const [selectedYear, setSelectedYear] = useState(new Date().getFullYear())
+
+  const { selectedDate, setSelectedDate } = useContext(BookingContext)
+
+  const excludedDates = [new Date(2023, 4, 28)]
+
+  const selectDate = (e) => {
+    if (
+      Number(new Date(selectedYear, selectedMonth, Number(e.currentTarget.innerHTML))) >=
+        Number(new Date(currentSettings.currentYear, currentSettings.currentMonthNumber, currentSettings.currentDayNumber)) &&
+      excludedDates.some((date) => Number(date) !== Number(new Date(selectedYear, selectedMonth, Number(e.currentTarget.innerHTML))))
+    ) {
+      setSelectedDate(new Date(selectedYear, selectedMonth, Number(e.currentTarget.innerHTML)))
+    }
+  }
+
+  const compareDates = (dateA, dateB) => {
+    return dateA[0] === dateB[0] && dateA[1] === dateB[1] && dateA[2] === dateB[2]
+  }
 
   const changeMonth = (action) => {
     switch (action) {
@@ -57,14 +78,18 @@ const Calendar = () => {
 
     const lastOfCurrent = new Date(year, month + 1, 0)
     const currentDays = lastOfCurrent.getDate()
+    const currentDayNumber = tday.getDate()
     const currentMonthNumber = tday.getMonth()
+    const currentYear = tday.getFullYear()
 
     setCurrentSettings({
-      currentMonth: currentMonth,
-      priorDays: priorDays,
-      priorLastDayNumber: priorLastDayNumber,
-      currentDays: currentDays,
-      currentMonthNumber: currentMonthNumber,
+      currentMonth,
+      priorDays,
+      priorLastDayNumber,
+      currentDays,
+      currentDayNumber,
+      currentMonthNumber,
+      currentYear,
     })
   }
 
@@ -126,7 +151,12 @@ const Calendar = () => {
           ))}
         {currentMonthCalendarDays.length > 0 &&
           currentMonthCalendarDays.map((cmd, idx) => (
-            <CalendarElement className="current" key={idx + currentSettings.priorLastDayNumber}>
+            <CalendarElement
+              className={`current ${compareDates([selectedYear, selectedMonth, Number(cmd)], [selectedDate.getFullYear(), selectedDate.getMonth(), selectedDate.getDate()]) ? 'selected' : ''} ${
+                compareDates([selectedYear, selectedMonth, Number(cmd)], [currentSettings.currentYear, currentSettings.currentMonthNumber, currentSettings.currentDayNumber]) ? 'today' : ''
+              } ${excludedDates.some((date) => Number(date) === Number(new Date(selectedYear, selectedMonth, Number(cmd)))) ? 'unav' : ''}`}
+              key={idx + currentSettings.priorLastDayNumber}
+              onClick={(e) => selectDate(e)}>
               {cmd}
             </CalendarElement>
           ))}
