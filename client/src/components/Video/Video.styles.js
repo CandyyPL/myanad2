@@ -67,6 +67,26 @@ export const VideoWrapper = styled.section`
     }
   }
 
+  .video-wrapper {
+    &.mobile {
+      display: block;
+    }
+
+    &.desktop {
+      display: none;
+    }
+
+    @media screen and (min-width: ${({ theme }) => theme.sizes.small}) {
+      &.mobile {
+        display: none;
+      }
+
+      &.desktop {
+        display: block;
+      }
+    }
+  }
+
   .media-wrapper {
     width: fit-content;
     height: fit-content;

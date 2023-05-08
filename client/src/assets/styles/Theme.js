@@ -9,7 +9,7 @@ const Theme = {
   },
   sizes: {
     minimal: '300px',
-    small: '768px',
+    small: '770px',
     smallMedium: '1024px',
     medium: '1280px',
     large: '1600px',

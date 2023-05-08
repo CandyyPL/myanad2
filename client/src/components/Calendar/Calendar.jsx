@@ -22,15 +22,13 @@ const Calendar = () => {
     currentDays: 0,
     currentDayNumber: 0,
     currentMonthNumber: 0,
-    currentYear: 2022,
+    currentYear: 2023,
   })
 
   const [selectedMonth, setSelectedMonth] = useState(new Date().getMonth())
   const [selectedYear, setSelectedYear] = useState(new Date().getFullYear())
 
-  const { selectedDate, setSelectedDate } = useContext(BookingContext)
-
-  const excludedDates = [new Date(2023, 4, 28)]
+  const { selectedDate, setSelectedDate, excludedDates } = useContext(BookingContext)
 
   const selectDate = (e) => {
     if (

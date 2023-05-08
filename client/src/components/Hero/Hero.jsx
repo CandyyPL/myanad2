@@ -3,8 +3,6 @@ import { HeroWrapper } from '@/components/Hero/Hero.styles.js'
 import stonksImg from '@/assets/stonks.png'
 
 const Hero = () => {
-  const vwidth = useState(innerWidth)
-
   return (
     <HeroWrapper>
       <div className="desktop-left">
@@ -23,16 +21,14 @@ const Hero = () => {
           <img src={stonksImg} alt="stonks" />
         </div>
       </div>
-      {vwidth[0] < 768 ? (
-        <>
-          <div className="image">
-            <img src={stonksImg} alt="stonks" />
-          </div>
-          <div className="survey-button">
-            <button>TAKE A FREE SURVEY</button>
-          </div>
-        </>
-      ) : null}
+      <div className="image-button">
+        <div className="image">
+          <img src={stonksImg} alt="stonks" />
+        </div>
+        <div className="survey-button">
+          <button>TAKE A FREE SURVEY</button>
+        </div>
+      </div>
     </HeroWrapper>
   )
 }

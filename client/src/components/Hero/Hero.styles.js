@@ -120,9 +120,22 @@ export const HeroWrapper = styled.section`
     }
   }
 
-  .image {
+  .image-button {
     width: 100%;
     height: 30%;
+
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    @media screen and (max-width: ${({ theme }) => theme.sizes.small}) {
+      display: flex;
+    }
+  }
+
+  .image {
+    width: 100%;
+    height: 100%;
 
     margin-bottom: 10px;
 
@@ -158,6 +171,7 @@ export const HeroWrapper = styled.section`
     button {
       width: 75%;
       height: 50px;
+      max-width: 350px;
 
       background-color: #2dc87a;
       border: none;

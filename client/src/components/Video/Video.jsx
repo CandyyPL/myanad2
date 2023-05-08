@@ -1,12 +1,10 @@
 import React, { useState, useRef } from 'react'
-import { VideoWrapper } from '@/components/Video/Video.styles.jsx'
+import { VideoWrapper } from '@/components/Video/Video.styles.js'
 import sampleVideo from '@/assets/rain.mp4'
 import playImg from '@/assets/play.png'
 import pauseImg from '@/assets/pause.png'
 
 const Video = () => {
-  const vwidth = useState(innerWidth)
-
   const video = useRef(null)
   const videoOverlay = useRef(null)
   const videoControl = useRef(null)
@@ -48,24 +46,23 @@ const Video = () => {
       <div className="text">
         <span>How to gain positively unfair advantage over your competition?</span>
       </div>
-      {vwidth[0] < 768 ? (
-        <>
-          {videoVisible ? (
-            <div className="media-wrapper dark" ref={videoOverlay}>
-              <video ref={video}>
-                <source src={sampleVideo} />
-              </video>
-              <div className="control active" onClick={changeVideoState} ref={videoControl}>
-                <img src={currentButtonImg} alt="playpause" />
-              </div>
+      <div className="video-wrapper mobile">
+        {videoVisible ? (
+          <div className="media-wrapper dark" ref={videoOverlay}>
+            <video ref={video}>
+              <source src={sampleVideo} />
+            </video>
+            <div className="control active" onClick={changeVideoState} ref={videoControl}>
+              <img src={currentButtonImg} alt="playpause" />
             </div>
-          ) : (
-            <div className="video-button">
-              <button onClick={() => setVideoVisible(true)}>TAP TO WATCH</button>
-            </div>
-          )}
-        </>
-      ) : (
+          </div>
+        ) : (
+          <div className="video-button">
+            <button onClick={() => setVideoVisible(true)}>TAP TO WATCH</button>
+          </div>
+        )}
+      </div>
+      <div className="video-wrapper desktop">
         <div className="media-wrapper dark" ref={videoOverlay}>
           <video ref={video}>
             <source src={sampleVideo} />
@@ -74,7 +71,7 @@ const Video = () => {
             <img src={currentButtonImg} alt="playpause" />
           </div>
         </div>
-      )}
+      </div>
     </VideoWrapper>
   )
 }

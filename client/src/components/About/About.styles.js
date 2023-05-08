@@ -32,10 +32,14 @@ export const AboutWrapper = styled.section`
     margin: 0;
     padding: 0;
 
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+
+    @media screen and (min-width: ${({ theme }) => theme.sizes.small}) {
+      display: flex;
+    }
 
     li {
       width: 100%;
@@ -184,9 +188,13 @@ export const AboutWrapper = styled.section`
       margin: 0;
       padding: 0;
 
-      display: flex;
+      display: none;
       justify-content: space-around;
       align-items: center;
+
+      @media screen and (max-width: ${({ theme }) => theme.sizes.small}) {
+        display: flex;
+      }
 
       list-style: none;
 
@@ -231,10 +239,14 @@ export const AboutWrapper = styled.section`
     border-radius: 10px;
     margin-top: 75px;
 
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+
+    @media screen and (max-width: ${({ theme }) => theme.sizes.small}) {
+      display: flex;
+    }
 
     .name {
       font-size: 36px;

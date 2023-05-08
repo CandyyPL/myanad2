@@ -11,11 +11,12 @@ export const BookingWrapper = styled.section`
 
   @media screen and (min-width: ${({ theme }) => theme.sizes.medium}) {
     flex-direction: row;
+    justify-content: space-around;
   }
 
   form {
     width: 100%;
-    height: 280px;
+    height: 100%;
 
     @media screen and (min-width: ${({ theme }) => theme.sizes.medium}) {
       width: 50%;
@@ -26,23 +27,16 @@ export const BookingWrapper = styled.section`
     justify-content: center;
     align-items: center;
 
+    input[type='time'],
     input[type='text'] {
       margin-bottom: 20px;
     }
 
+    input[type='time'],
     input[type='text'],
     input[type='email'] {
       width: 60%;
       height: 40px;
-
-      @media screen and (min-width: ${({ theme }) => theme.sizes.small}) {
-        width: 40%;
-      }
-
-      @media screen and (min-width: ${({ theme }) => theme.sizes.medium}) {
-        width: 50%;
-        height: 60px;
-      }
 
       background-color: #fff;
       border: none;
@@ -52,6 +46,23 @@ export const BookingWrapper = styled.section`
       font-family: ${({ theme }) => theme.fonts.noto};
       font-weight: bold;
       text-align: center;
+
+      @media screen and (min-width: ${({ theme }) => theme.sizes.small}) {
+        width: 40%;
+
+        font-size: 18px;
+      }
+
+      @media screen and (min-width: ${({ theme }) => theme.sizes.medium}) {
+        width: 50%;
+        height: 60px;
+
+        font-size: 20px;
+      }
+    }
+
+    input[type='time'] {
+      width: 30%;
     }
 
     .checkbox {
@@ -76,11 +87,11 @@ export const BookingWrapper = styled.section`
 
   .book-button {
     width: 80%;
-    height: 90px;
+    height: 80px;
 
     @media screen and (min-width: ${({ theme }) => theme.sizes.small}) {
       width: 300px;
-      height: 140px;
+      height: 120px;
     }
 
     background-color: #2dc87a;
@@ -111,6 +122,41 @@ export const BookingWrapper = styled.section`
       &:hover {
         background-color: #1cb769;
       }
+    }
+  }
+
+  .error {
+    width: 80%;
+    height: 80px;
+
+    background-color: #990a00;
+    border: none;
+    border-radius: 10px;
+    margin: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 16px;
+    font-family: ${({ theme }) => theme.fonts.noto};
+    font-weight: bold;
+    color: white;
+
+    @media screen and (min-width: ${({ theme }) => theme.sizes.small}) {
+      font-size: 18px;
+    }
+
+    @media screen and (min-width: ${({ theme }) => theme.sizes.smallMedium}) {
+      width: 60%;
+
+      font-size: 20px;
+    }
+
+    @media screen and (min-width: ${({ theme }) => theme.sizes.medium}) {
+      width: 50%;
+
+      font-size: 22px;
     }
   }
 `
